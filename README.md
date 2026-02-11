@@ -1,46 +1,29 @@
-# 🌌 Fluxograma Interativo: Física UFABC (PP 2023)
-
-Este guia visual organiza a trajetória completa desde o ingresso no BC&T até a conclusão do Bacharelado em Física, otimizado para as regras do catálogo de 2023.
-
----
-
-## 🧭 Escolha sua Trajetória
-*Clique nas abas abaixo para alternar entre as sugestões de percurso.*
-
-<details>
-<summary><b>🔬 Perfil: Físico Pesquisador (Foco Académico/Pós-Graduação)</b></summary>
-<p align="center"><i>Baseado no Quadro 9.2 do PPC - Focado em rigor teórico e preparação para mestrado/doutorado.</i></p>
-
-```mermaid
 graph TD
-    %% Estilos de Cores
+    %% Estilização
     classDef bct fill:#f1f8e9,stroke:#558b2f,stroke-width:2px;
-    classDef obrigatoria fill:#e1f5fe,stroke:#01579b,stroke-width:2px;
+    classDef fisica fill:#e1f5fe,stroke:#01579b,stroke-width:2px;
     classDef limitada fill:#fff3e0,stroke:#ef6c00,stroke-width:2px;
-    classDef livre fill:#fafafa,stroke:#9e9e9e,stroke-dasharray: 5 5;
+    classDef livre fill:#f5f5f5,stroke:#9e9e9e,stroke-dasharray: 5 5;
 
-    subgraph "Anos 1 e 2: O Tronco BC&T"
-        Q1[Q1: B.Mat, B.Comp, ECN]:::bct --> Q2[Q2: FUV, GA, B.Epist]:::bct
-        Q2 --> Q3[Q3: FDV, AL, B.Exp]:::bct
-        Q3 --> Q4[Q4: EDO, FM, Est.Mat]:::bct
-        Q4 --> Q5[Q5: FT, EM, Trans.Cal]:::bct
-        Q5 --> Q6[Q6: Q.Exp, C.Comp, Hum]:::bct
+    subgraph BCT [Bloco 1: Bacharelado em Ciência e Tecnologia - Início]
+        Q1[Q1: B.Mat / B.Comp / ECN]:::bct --> Q2[Q2: FUV / GA / B.Epist]:::bct
+        Q2 --> Q3[Q3: FDV / AL / B.Exp]:::bct
+        Q3 --> Q4[Q4: EDO / Fen. Mecânicos]:::bct
+        Q4 --> Q5[Q5: Fen. Térmicos / Fen. Eletromag]:::bct
+        Q5 --> Q6[Q6: Física Quântica / Mec. Clássica I]:::bct
     end
 
-    subgraph "Ano 3: Transição e Mecânica Analítica"
-        Q6 --> Q7[Q7: Mec. Clássica I, EM I, C. Vetorial]:::obrigatoria
-        Q7 --> Q8[Q8: Mec. Clássica II, EM II, F. Quântica]:::obrigatoria
-        Q8 --> Q9[Q9: Mec. Quântica I, F. Térmicos, V. Complexas]:::obrigatoria
+    subgraph FIS [Bloco 2: Bacharelado em Física - Específica]
+        Q6 --> Q7[Q7: CVT / Eletromag I / V. Complexas]:::fisica
+        Q7 --> Q8[Q8: Mec. Quântica I / A. Fourier]:::fisica
+        Q8 --> Q9[Q9: Mec. Quântica II / F. Exp IV]:::fisica
+        Q9 --> Q10[Q10: Mec. Estatística I / Limitada]:::limitada
+        Q10 --> Q11[Q11: Mec. Estatística II / TCC I]:::fisica
+        Q11 --> Q12[Q12: TCC II / Livre / Formatura]:::fisica
     end
 
-    subgraph "Ano 4: Especialização Teórica"
-        Q9 --> Q10[Q10: Mec. Quântica II, F. Estatística]:::limitada
-        Q10 --> Q11[Q11: Trab. Graduação I, Física Exp. V]:::obrigatoria
-        Q11 --> Q12[Q12: Trab. Graduação II, Livre]:::obrigatoria
-    end
-
-    %% Destaques do Perfil
-    VC[Variáveis Complexas]:::limitada
-    MQ2[Mecânica Quântica II]:::limitada
-    click Q7 "#mc1"
-    click Q9 "#vc"
+    %% Cliques para detalhes
+    click Q4 "#fen-mec"
+    click Q6 "#mec-1"
+    click Q7 "#cvt"
+    click Q9 "#mq2"
