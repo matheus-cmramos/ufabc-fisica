@@ -1,29 +1,50 @@
-# 🌌 Fluxograma Interativo: BC&T -> Física
+# 🌌 Fluxograma Interativo: Bacharelado em Física (UFABC - PP 2023)
 
-Este guia visual ajuda estudantes a navegarem pelas disciplinas obrigatórias e recomendações para o Bacharelado em Física (PPC 2023)
+> **Perfil:** Físico Pesquisador (Trajetória sugerida conforme Quadro 9.2 do PPC).
 
-### 🗺️ O Fluxo
-*Clique em uma disciplina para ver os detalhes abaixo.*
+### 🗺️ O Mapa de Navegação
+*As matérias em **Ouro** são Limitadas "Fortemente Recomendadas". As em **Cinza** são Livres sugeridas.*
 
 ```mermaid
 graph TD
-    %% Trilhas
-    subgraph "Base Comum (BC&T)"
-        FE[Base Experimental] --> FM[Fenômenos Mecânicos]
-        FUV[Funções de Uma Variável] --> FDV[Funções de Diversas Variáveis]
-        FUV --> FM
-        GA[Geometria Analítica] --> AL[Álgebra Linear]
+    %% Estilização
+    classDef essencial fill:#fff5e6,stroke:#ff9900,stroke-width:2px;
+    classDef livre fill:#f9f9f9,stroke:#ccc,stroke-dasharray: 5 5;
+
+    subgraph Q7 [7º Quadrimestre]
+        MC1[Mecânica Clássica I]
+        CVT[Cálculo Vetorial e Tensorial]
+        EM1[Eletromagnetismo I]
     end
 
-    subgraph "Caminho da Física"
-        FM --> MC1[Mecânica Clássica I]
-        FDV --> EDO[EDOs]
-        EDO --> MC1
-        CVT[Cálculo Vetorial e Tensorial] --> MC1
+    subgraph Q8 [8º Quadrimestre]
+        MC2[Mecânica Clássica II]
+        EM2[Eletromagnetismo II]
+        FQM[Física Quântica]
     end
 
-    %% Links de Âncora
-    click FUV "#fuv" "Ver detalhes de FUV"
-    click FM "#fm" "Ver detalhes de Fenômenos Mecânicos"
-    click MC1 "#mc1" "Ver detalhes de Mecânica Clássica I"
-    click CVT "#cvt" "Ver detalhes de Vetorial e Tensorial"
+    subgraph Q9 [9º Quadrimestre]
+        MQ1[Mecânica Quântica I]
+        FT[Fenômenos Térmicos]
+        VC[Variáveis Complexas]:::essencial
+    end
+
+    subgraph Q10 [10º Quadrimestre]
+        MQ2[Mecânica Quântica II]:::essencial
+        FEst[Física Estatística]
+        Livre1[Disciplina Livre]:::livre
+    end
+
+    %% Conexões Críticas
+    MC1 --> MC2
+    CVT --> EM1
+    EM1 --> EM2
+    FQM --> MQ1
+    MQ1 --> MQ2
+    VC -.-> MQ2
+
+    %% Links para Detalhes
+    click MC1 "#mc1"
+    click CVT "#cvt"
+    click VC "#vc"
+    click Livre1 "#livres"
