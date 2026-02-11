@@ -1,21 +1,53 @@
-<details> <summary><b>🔬 Perfil: Físico Pesquisador (Foco Acadêmico)</b></summary> <p align="center"><i>Baseado no Quadro 9.2 do PPC - Focado em rigor teórico para quem almeja pós-graduação.</i></p>
+<details open> <summary><b>🔬 Perfil: Físico Pesquisador (Foco Acadêmico)</b></summary> <p align="center"><i>Baseado no Quadro 9.2 do PPC - Focado em rigor teórico para pós-graduação.</i></p>
+
 graph TD
-    %% Estilos
+    %% Estilos de Cores
+    classDef bct fill:#f1f8e9,stroke:#558b2f,stroke-width:2px;
+    classDef obrigatoria fill:#e1f5fe,stroke:#01579b,stroke-width:2px;
+    classDef limitada fill:#fff3e0,stroke:#ef6c00,stroke-width:2px;
+    classDef livre fill:#fafafa,stroke:#9e9e9e,stroke-dasharray: 5 5;
+
+    subgraph BCT [Ciclo Inicial: Bacharelado em Ciência e Tecnologia]
+        Q1[Q1: B.Mat, B.Comp, B.Exp, Est. Mat]:::bct --> Q2[Q2: FUV, GA, B.Epist, Evol. Vida]:::bct
+        Q2 --> Q3[Q3: FDV, AL, Proc. Info, Transf. Quím]:::bct
+        Q3 --> Q4[Q4: EDO, Fen. Mecânicos, Prob. Est, Ópt. Relat]:::bct
+        Q4 --> Q5[Q5: Fen. Térmicos, Fen. Eletromag, Fís. Quântica, Fís. Exp I]:::bct
+        Q5 --> Q6[Q6: Mec. Clássica I, C. Vetorial, Fís. Exp II, Hum II]:::bct
+    end
+
+    subgraph FISICA [Ciclo Específico: Bacharelado em Física]
+        Q6 --> Q7[Q7: Eletromag I, Var. Complexas, Mec. Clássica II, Fís. Exp III]:::obrigatoria
+        Q7 --> Q8[Q8: Mec. Quântica I, Eletromag II, Análise Fourier]:::obrigatoria
+        Q8 --> Q9[Q9: Mec. Quântica II, Fís. Exp IV, Mec. Clássica III, Eletromag III]:::obrigatoria
+        Q9 --> Q10[Q10: Mec. Estatística I, Mec. Quântica III, Limitada]:::limitada
+        Q10 --> Q11[Q11: Mec. Estatística II, Mec. Quântica IV, Limitada]:::limitada
+        Q11 --> Q12[Q12: Opção Limitada ou Livre]:::livre
+    end
+
+    %% Cliques para detalhes
+    click Q4 "#fen-mec"
+    click Q6 "#mc1"
+    click Q7 "#vc"
+</details>
+
+<details> <summary><b>💼 Perfil: Físico Interdisciplinar (Foco Mercado/Aplicada)</b></summary> <p align="center"><i>Baseado no Quadro 9.1 do PPC - Conexões com Economia, Finanças e Tecnologia.</i></p>
+graph TD
+    %% Estilos de Cores
     classDef bct fill:#f1f8e9,stroke:#558b2f,stroke-width:2px;
     classDef obrigatoria fill:#e1f5fe,stroke:#01579b,stroke-width:2px;
     classDef inter fill:#f3e5f5,stroke:#7b1fa2,stroke-width:2px;
     classDef livre fill:#fafafa,stroke:#9e9e9e,stroke-dasharray: 5 5;
 
-    subgraph BCT_INT [Tronco Inicial BC&T]
+    subgraph BCT_INT [Tronco BC&T]
         I1[Q1-Q3: Base Científica e Humanidades]:::bct --> I2[Q4-Q6: Transição para Física e Matemática]:::bct
     end
 
-    subgraph FIS_INT [Bacharelado em Física Interdisciplinar]
-        I2 --> Q7_I[Q7: Var. Complexas / Eletromag I / Fís. Exp III / Hum III]:::obrigatoria
-        Q7_I --> Q8_I[Q8: Mec. Quântica I / Análise Fourier / Bioquímica]:::obrigatoria
-        Q8_I --> Q9_I[Q9: Mec. Quântica II / Fís. Exp IV / Projeto Dirigido]:::obrigatoria
-        Q9_I --> Q10_I[Q10: Opção Limitada ou Livre - Foco Interdisciplinar]:::inter
-        Q10_I --> Q11_I[Q11: Opção Limitada ou Livre - Foco Interdisciplinar]:::inter
-        Q11_I --> Q12_I[Q12: Opção Limitada ou Livre - Formatura]:::livre
+    subgraph FIS_INT [Física Interdisciplinar]
+        I2 --> Q7_I[Q7: Var. Complexas, Eletromag I, Fís. Exp III, Hum III]:::obrigatoria
+        Q7_I --> Q8_I[Q8: Mec. Quântica I, Análise Fourier, Bioquímica]:::obrigatoria
+        Q8_I --> Q9_I[Q9: Mec. Quântica II, Fís. Exp IV, Projeto Dirigido]:::obrigatoria
+        Q9_I --> Q10_I[Q10: Limitada/Livre - Perfil Interdisciplinar]:::inter
+        Q10_I --> Q11_I[Q11: Limitada/Livre - Perfil Interdisciplinar]:::inter
+        Q11_I --> Q12_I[Q12: Formatura]:::livre
     end
 </details>
