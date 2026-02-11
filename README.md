@@ -1,5 +1,8 @@
-<details open> <summary><b>🔬 Perfil: Físico Pesquisador (Foco Acadêmico)</b></summary> <p align="center"><i>Baseado no Quadro 9.2 do PPC - Focado em rigor teórico para pós-graduação.</i></p>
+<details open>
+<summary><b>🔬 Perfil: Físico Pesquisador (Foco Acadêmico)</b></summary>
+<p align="center"><i>Baseado no Quadro 9.2 do PPC - Focado em rigor teórico para pós-graduação.</i></p>
 
+```mermaid
 graph TD
     %% Estilos de Cores
     classDef bct fill:#f1f8e9,stroke:#558b2f,stroke-width:2px;
@@ -25,29 +28,10 @@ graph TD
     end
 
     %% Cliques para detalhes
-    click Q4 "#fen-mec"
-    click Q6 "#mc1"
-    click Q7 "#vc"
-</details>
+    click Q4 "#fen-mec" "Detalhes de Fen. Mecânicos"
+    click Q6 "#mc1" "Detalhes de Mec. Clássica I"
+    click Q7 "#vc" "Detalhes de Var. Complexas"
 
-<details> <summary><b>💼 Perfil: Físico Interdisciplinar (Foco Mercado/Aplicada)</b></summary> <p align="center"><i>Baseado no Quadro 9.1 do PPC - Conexões com Economia, Finanças e Tecnologia.</i></p>
-graph TD
-    %% Estilos de Cores
-    classDef bct fill:#f1f8e9,stroke:#558b2f,stroke-width:2px;
-    classDef obrigatoria fill:#e1f5fe,stroke:#01579b,stroke-width:2px;
-    classDef inter fill:#f3e5f5,stroke:#7b1fa2,stroke-width:2px;
-    classDef livre fill:#fafafa,stroke:#9e9e9e,stroke-dasharray: 5 5;
+</details><details> <summary><b>💼 Perfil: Físico Interdisciplinar (Foco Mercado/Aplicada)</b></summary> <p align="center"><i>Baseado no Quadro 9.1 do PPC - Conexões com Economia, Finanças e Tecnologia.</i></p>
 
-    subgraph BCT_INT [Tronco BC&T]
-        I1[Q1-Q3: Base Científica e Humanidades]:::bct --> I2[Q4-Q6: Transição para Física e Matemática]:::bct
-    end
-
-    subgraph FIS_INT [Física Interdisciplinar]
-        I2 --> Q7_I[Q7: Var. Complexas, Eletromag I, Fís. Exp III, Hum III]:::obrigatoria
-        Q7_I --> Q8_I[Q8: Mec. Quântica I, Análise Fourier, Bioquímica]:::obrigatoria
-        Q8_I --> Q9_I[Q9: Mec. Quântica II, Fís. Exp IV, Projeto Dirigido]:::obrigatoria
-        Q9_I --> Q10_I[Q10: Limitada/Livre - Perfil Interdisciplinar]:::inter
-        Q10_I --> Q11_I[Q11: Limitada/Livre - Perfil Interdisciplinar]:::inter
-        Q11_I --> Q12_I[Q12: Formatura]:::livre
-    end
-</details>
+</details> ```
